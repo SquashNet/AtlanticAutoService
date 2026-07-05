@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Atlantic Auto Service | Auto Repair in Groton, CT — Since 2002</title>
-  <meta name="description" content="Independent, owner-operated auto repair in Groton, CT since 2002. Free quotes, OEM parts, 1-year/4,000-mile warranty. Walk-ins welcome — call (860) 449-9514.">
+  <meta name="description" content="Independent, owner-operated auto repair in Groton, CT since 2002. Free quotes, OEM parts, 1-year/12,000-mile warranty. Walk-ins welcome — call (860) 449-9514.">
   <meta name="theme-color" content="#16181a">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- TODO: once the site is live, add a canonical link and og:url with the final address,
-       e.g. https://YOUR-USERNAME.github.io/atlantic-auto-service/ or a custom domain -->
+  <link rel="canonical" href="https://squashnet.github.io/AtlanticAutoService/">
+  <meta property="og:url" content="https://squashnet.github.io/AtlanticAutoService/">
   <meta property="og:site_name" content="Atlantic Auto Service">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Atlantic Auto Service — Auto Repair in Groton, CT Since 2002">
-  <meta property="og:description" content="Free quotes, OEM parts, and a 1-year/4,000-mile warranty on every job. Walk-ins welcome, Mon–Fri 8–5. Call (860) 449-9514.">
+  <meta property="og:description" content="Free quotes, OEM parts, and a 1-year/12,000-mile warranty on every job. Walk-ins welcome, Mon–Fri 8–5. Call (860) 449-9514.">
   <meta property="og:locale" content="en_US">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
   --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
 
   --container: 1120px;
-  --radius: 6px;
+  --radius: 10px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -264,15 +264,15 @@ address { font-style: normal; }
 .seal-roundtext {
   fill: var(--paper);
   font-family: var(--font-display);
-  font-weight: 700; font-size: 15.5px;
-  letter-spacing: 0.3em;
+  font-weight: 700; font-size: 14.5px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .seal-star { fill: var(--red-bright); }
 .seal-est {
   fill: var(--paper); fill-opacity: 0.85;
   font-family: var(--font-body); font-weight: 700;
-  font-size: 12.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
 }
 .seal-year {
   fill: var(--red-bright);
@@ -662,6 +662,65 @@ section[id] { scroll-margin-top: 90px; }
 .faq-body p:last-child { margin-bottom: 0; }
 .faq-body strong { color: var(--paper); }
 
+/* ---------- Hero trust line ---------- */
+.hero-trust {
+  display: flex; align-items: center; gap: 0.55rem;
+  margin-top: 1.4rem;
+  color: var(--muted); font-weight: 600; font-size: 1rem;
+}
+.hero-trust .star { color: var(--red-bright); font-size: 1.2rem; line-height: 1; }
+.hero-trust strong { color: var(--paper); }
+
+/* ---------- Featured quote ---------- */
+.quote--featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(216, 64, 31, 0.10), rgba(216, 64, 31, 0) 55%), var(--panel);
+}
+.quote--featured p { font-size: 1.22rem; max-width: 72ch; }
+
+/* ---------- Mobile call bar ---------- */
+.mobile-call-bar { display: none; }
+@media (max-width: 719.98px) {
+  body { padding-bottom: 88px; }
+  .mobile-call-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    padding: 0.65rem 0.9rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: rgba(16, 18, 20, 0.97);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+  }
+  .mobile-call-bar .btn { padding: 0.85rem 0.5rem; font-size: 1rem; }
+}
+
+/* ---------- CARFAX verified note ---------- */
+.verified-note {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.4rem;
+  background: var(--panel);
+  border: 1px solid var(--line); border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  color: var(--muted); max-width: 76ch;
+}
+.verified-note strong { color: var(--paper); }
+
+/* ---------- Review platform links ---------- */
+.review-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 2.25rem; }
+.review-links-label {
+  font-family: var(--font-display); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.95rem; color: var(--muted); margin: 0 0.4rem 0 0;
+}
+.review-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.05rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  color: var(--paper); text-decoration: none;
+  font-weight: 600; font-size: 0.95rem;
+}
+.review-chip:hover { border-color: var(--red); color: var(--paper); }
+.review-chip .score { color: var(--red-bright); font-weight: 700; }
+
 /* ---------- Motion & print sanity ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -679,14 +738,15 @@ section[id] { scroll-margin-top: 90px; }
 
   </style>
 
-  <!-- Local business schema. NOTE: geo coordinates are approximate — for best local SEO,
-       right-click the shop's pin in Google Maps, copy the exact lat/long, and paste it below. -->
+  <!-- Local business schema. Coordinates come from the shop's Openbay listing —
+       spot-check against the Google Maps pin if the marker ever moves. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Atlantic Auto Service",
-    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/4,000-mile warranty.",
+    "url": "https://squashnet.github.io/AtlanticAutoService/",
+    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/12,000-mile warranty.",
     "telephone": "+1-860-449-9514",
     "address": {
       "@type": "PostalAddress",
@@ -698,8 +758,8 @@ section[id] { scroll-margin-top: 90px; }
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 41.3395,
-      "longitude": -72.0210
+      "latitude": 41.347264,
+      "longitude": -72.021835
     },
     "hasMap": "https://www.google.com/maps/search/?api=1&query=182+Fort+Hill+Rd%2C+Groton%2C+CT+06340",
     "openingHoursSpecification": [
@@ -733,8 +793,7 @@ section[id] { scroll-margin-top: 90px; }
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Atlantic Auto Service — home">
         <svg class="brand-mark" width="34" height="34" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <polygon points="32,6 54,19 54,45 32,58 10,45 10,19" fill="#d8401f"/>
-          <circle cx="32" cy="32" r="10" fill="#16181a"/>
+          <path fill="#d8401f" fill-rule="evenodd" d="M27.28,11.54 L27.96,3.28 A29.0,29.0 0 0 1 36.04,3.28 L36.72,11.54 A21.0,21.0 0 0 1 43.13,14.19 L49.45,8.84 A29.0,29.0 0 0 1 55.16,14.55 L49.81,20.87 A21.0,21.0 0 0 1 52.46,27.28 L60.72,27.96 A29.0,29.0 0 0 1 60.72,36.04 L52.46,36.72 A21.0,21.0 0 0 1 49.81,43.13 L55.16,49.45 A29.0,29.0 0 0 1 49.45,55.16 L43.13,49.81 A21.0,21.0 0 0 1 36.72,52.46 L36.04,60.72 A29.0,29.0 0 0 1 27.96,60.72 L27.28,52.46 A21.0,21.0 0 0 1 20.87,49.81 L14.55,55.16 A29.0,29.0 0 0 1 8.84,49.45 L14.19,43.13 A21.0,21.0 0 0 1 11.54,36.72 L3.28,36.04 A29.0,29.0 0 0 1 3.28,27.96 L11.54,27.28 A21.0,21.0 0 0 1 14.19,20.87 L8.84,14.55 A29.0,29.0 0 0 1 14.55,8.84 L20.87,14.19 A21.0,21.0 0 0 1 27.28,11.54 Z M32.0,20.5 L41.96,26.25 L41.96,37.75 L32.0,43.5 L22.04,37.75 L22.04,26.25 Z"/>
         </svg>
         <span class="brand-text">
           <span class="brand-name">Atlantic</span>
@@ -782,7 +841,7 @@ section[id] { scroll-margin-top: 90px; }
                3. Groton's Independent Garage — Since 2002. -->
           <h1 id="hero-heading">Fixed Right. Priced&nbsp;Fair. <span class="accent">Since&nbsp;2002.</span></h1>
 
-          <p class="hero-hook">The owner who quotes your car is the mechanic who fixes it. You get the price <strong>before</strong> any work starts — with OEM parts and a full year's warranty behind every job.</p>
+          <p class="hero-hook">The owner who quotes your car is the mechanic who fixes it. Price <strong>before</strong> work starts, OEM parts on every job, and a 1-year / 12,000-mile warranty behind the work.</p>
 
           <div class="hero-ctas">
             <a class="btn btn-primary btn-lg" href="tel:+18604499514">
@@ -791,6 +850,8 @@ section[id] { scroll-margin-top: 90px; }
             </a>
             <a class="btn btn-ghost btn-lg" href="contact.html#quote">Get a Free Quote</a>
           </div>
+
+          <p class="hero-trust"><span class="star" aria-hidden="true">&#9733;</span> Rated <strong>4.8&nbsp;/&nbsp;5</strong> by verified CARFAX reviewers &mdash; trusted in Groton since 2002</p>
         </div>
 
         <div class="hero-seal-wrap">
@@ -861,12 +922,66 @@ section[id] { scroll-margin-top: 90px; }
       </div>
     </section>
 
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" aria-labelledby="reviews-heading">
+      <div class="container">
+        <p class="eyebrow">Reviews</p>
+        <h2 class="section-h" id="reviews-heading">What Customers Say</h2>
+        <p class="lede">Reviewers across CARFAX, Google, Yelp, and Car Talk keep landing on the same things: honest diagnosis, fair prices, and work that's explained — not just billed.</p>
+
+        <p class="verified-note"><strong>Verified, not self-reported:</strong> every invoice we write is reported to CARFAX through our shop management system, so the service history and reviews you see there are backed by real repair records. <a href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">See our verified CARFAX reviews &rarr;</a></p>
+
+        <!-- Hand-picked from the shop's public reviews on Google, Yelp, CARFAX, and Car Talk.
+             Swap in fresh ones anytime — keep them short, real, and attributed. -->
+        <div class="quotes">
+          <blockquote class="quote quote--featured">
+            <p>&ldquo;These guys take the time to show you what they fixed. If they find other problems along the way, they call immediately to let you know. One time &hellip; they sent a flatbed over at their expense, fixed the issue immediately, and drove it back to my house. The car ran great after that.&rdquo;</p>
+            <footer>&mdash; Customer review, Car Talk</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;Quick and friendly service, every time. Transparent and honest pricing too.&rdquo;</p>
+            <footer>&mdash; Christopher K., Google</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;They were honest and told me what I needed, without overpricing.&rdquo;</p>
+            <footer>&mdash; Elizabeth C., Yelp</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;Simply the best local mechanics. Honest, trustworthy, and really know their stuff.&rdquo;</p>
+            <footer>&mdash; 2022 Honda HR-V owner, verified CARFAX review</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;Matt genuinely cares. Fair prices, quality work.&rdquo;</p>
+            <footer>&mdash; Chuck, Google</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;They are honest and they try to keep the price down while still doing the job right the first time.&rdquo;</p>
+            <footer>&mdash; Angel S., Yelp</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>&ldquo;They're the best!! Professional, honest, and reliable. Grateful small businesses like them still exist.&rdquo;</p>
+            <footer>&mdash; Tim M., verified CARFAX review</footer>
+          </blockquote>
+        </div>
+
+        <div class="review-links">
+          <p class="review-links-label">Read more on:</p>
+          <a class="review-chip" href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">CARFAX <span class="score">4.8&#9733;</span></a>
+          <a class="review-chip" href="https://www.yelp.com/biz/atlantic-auto-service-groton" target="_blank" rel="noopener">Yelp</a>
+          <a class="review-chip" href="https://www.cartalk.com/ct/groton/144357/atlantic-auto-service" target="_blank" rel="noopener">Car Talk</a>
+          <a class="review-chip" href="https://app.openbay.com/s/atlantic-auto-service-groton-ct" target="_blank" rel="noopener">Openbay</a>
+          <a class="review-chip" href="https://www.loc8nearme.com/connecticut/groton/atlantic-auto-services/4313855/" target="_blank" rel="noopener">Loc8NearMe <span class="score">A+</span></a>
+          <!-- Ratings shown were accurate as of mid-2026 — worth a glance every few months. -->
+        </div>
+      </div>
+    </section>
+
     <!-- ============ SERVICE HIGHLIGHTS ============ -->
-    <section class="section" aria-labelledby="services-heading">
+    <section class="section section--alt" aria-labelledby="services-heading">
       <div class="container">
         <p class="eyebrow">What We Fix</p>
         <h2 class="section-h" id="services-heading">Every system. Every make.</h2>
-        <p class="lede">Domestic, European, and Asian — cars, trucks, and SUVs. Here's the short list; the full one is longer.</p>
+        <p class="lede">Domestic, European, and Asian — cars, trucks, and SUVs. These are the most common jobs; the full list is longer.</p>
 
         <div class="card-grid">
           <a class="svc-card" href="services.html#maintenance">
@@ -877,14 +992,14 @@ section[id] { scroll-margin-top: 90px; }
           </a>
 
           <a class="svc-card" href="services.html#brakes">
-            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="6.6" r="0.9" fill="currentColor" stroke="none"/><circle cx="17.4" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="17.4" r="0.9" fill="currentColor" stroke="none"/><circle cx="6.6" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="7"/><circle cx="12" cy="13" r="2.4"/><circle cx="12" cy="8.9" r="0.85" fill="currentColor" stroke="none"/><circle cx="16.1" cy="13" r="0.85" fill="currentColor" stroke="none"/><circle cx="12" cy="17.1" r="0.85" fill="currentColor" stroke="none"/><circle cx="7.9" cy="13" r="0.85" fill="currentColor" stroke="none"/><path d="M15.28 3.98A9.6 9.6 0 0 1 21.13 10.03"/></svg>
             <h3>Brakes</h3>
             <p>Pads, rotors, calipers, lines, and ABS. If it squeals, grinds, or feels soft — don't wait.</p>
             <span class="more">See details &rarr;</span>
           </a>
 
           <a class="svc-card" href="services.html#engine">
-            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="9" width="12" height="9" rx="1.5"/><path d="M9 9V6h6"/><path d="M17 13h4v4"/><path d="M5 13H2"/><path d="M8 18v2m8-2v2"/></svg>
+            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="9" width="13" height="8" rx="1.5"/><path d="M8 9V6"/><path d="M6 6h7"/><path d="M17 11h3.5v4H17"/><path d="M7 17v2.5"/><path d="M14 17v2.5"/><circle cx="10.5" cy="13" r="1.7"/></svg>
             <h3>Engine &amp; Drivetrain</h3>
             <p>Check-engine diagnostics through full rebuilds, clutches, axles, and timing service.</p>
             <span class="more">See details &rarr;</span>
@@ -898,7 +1013,7 @@ section[id] { scroll-margin-top: 90px; }
           </a>
 
           <a class="svc-card" href="services.html#hvac">
-            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v20"/><path d="M3.3 7 20.7 17"/><path d="M20.7 7 3.3 17"/><path d="m9 4.5 3 2 3-2"/><path d="m9 19.5 3-2 3 2"/></svg>
+            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M4.2 7.5 19.8 16.5"/><path d="M19.8 7.5 4.2 16.5"/><path d="m8.5 5.7 3.5-2.5 3.5 2.5"/><path d="m8.5 18.3 3.5 2.5 3.5-2.5"/></svg>
             <h3>Heating &amp; A/C</h3>
             <p>Cold air in July, heat in January, and a cooling system that holds temperature in between.</p>
             <span class="more">See details &rarr;</span>
@@ -917,10 +1032,10 @@ section[id] { scroll-margin-top: 90px; }
     </section>
 
     <!-- ============ WHY THIS SHOP ============ -->
-    <section class="section section--alt" aria-labelledby="why-heading">
+    <section class="section" aria-labelledby="why-heading">
       <div class="container">
         <p class="eyebrow">Why Atlantic</p>
-        <h2 class="section-h" id="why-heading">The way a shop should treat you</h2>
+        <h2 class="section-h" id="why-heading">Why Drivers Choose Atlantic</h2>
 
         <div class="why-grid">
           <div class="why">
@@ -933,7 +1048,7 @@ section[id] { scroll-margin-top: 90px; }
           </div>
           <div class="why">
             <h3>Backed for a full year</h3>
-            <p>Parts and labor covered <strong>100% for 365 days or 4,000 miles,</strong> whichever comes first. The terms are printed on every estimate and invoice.</p>
+            <p>Parts and labor covered <strong>100% for 365 days or 12,000 miles,</strong> whichever comes first. The terms are printed on every estimate and invoice.</p>
           </div>
           <div class="why">
             <h3>One owner. One set of hands.</h3>
@@ -943,37 +1058,10 @@ section[id] { scroll-margin-top: 90px; }
       </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============ -->
-    <section class="section" aria-labelledby="reviews-heading">
-      <div class="container">
-        <p class="eyebrow">From Our Customers</p>
-        <h2 class="section-h" id="reviews-heading">Word gets around</h2>
-
-        <!-- Real quotes from public reviews of the shop (CARFAX, Car Talk, Google).
-             Feel free to swap in newer ones from your Google Business Profile anytime. -->
-        <div class="quotes">
-          <blockquote class="quote">
-            <p>&ldquo;Very well done. Trouble shooting is excellent saving money for repairs.&rdquo;</p>
-            <footer>&mdash; 2020 Audi Q5 owner, verified CARFAX review</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>&ldquo;These guys take the time to show you what they fixed.&rdquo;</p>
-            <footer>&mdash; Customer review, Car Talk</footer>
-          </blockquote>
-          <blockquote class="quote">
-            <p>&ldquo;Very helpful with our brakes &mdash; service and price were great.&rdquo;</p>
-            <footer>&mdash; Customer review, Google</footer>
-          </blockquote>
-        </div>
-
-        <p class="grid-footnote">Rated <strong>4.8 out of 5</strong> by verified customers on CARFAX. <a href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">Read more reviews &rarr;</a></p>
-      </div>
-    </section>
-
     <!-- ============ CTA BAND ============ -->
     <section class="cta-band" aria-labelledby="cta-heading">
       <div class="container">
-        <h2 id="cta-heading">Something sound off? Bring it by.</h2>
+        <h2 id="cta-heading">Something doesn't sound right? Bring it in.</h2>
         <p>Walk in Monday through Friday — no appointment needed — or call and we'll get you scheduled. Serving Groton, Mystic, New London, and all of southeastern Connecticut.</p>
         <div class="btn-row">
           <a class="btn btn-dark btn-lg" href="tel:+18604499514">Call (860) 449-9514</a>
@@ -1014,9 +1102,9 @@ section[id] { scroll-margin-top: 90px; }
       <div class="footer-col">
         <p class="footer-h">Find Us Online</p>
         <ul>
-          <!-- TODO: replace # with your real profile links -->
-          <li><a href="#" rel="noopener">Google Business Profile</a></li>
-          <li><a href="#" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/people/Atlantic-Auto-Service-LLC/100064060028101/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.yelp.com/biz/atlantic-auto-service-groton" target="_blank" rel="noopener">Yelp</a></li>
+          <li><a href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">CARFAX Reviews</a></li>
         </ul>
       </div>
     </div>
@@ -1034,6 +1122,14 @@ section[id] { scroll-margin-top: 90px; }
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-call-bar">
+    <a class="btn btn-primary" href="tel:+18604499514">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+    <a class="btn btn-ghost" href="contact.html#quote">Free Quote</a>
+  </div>
 
   <script>
 /* Atlantic Auto Service — main.js

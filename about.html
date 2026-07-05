@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us | Atlantic Auto Service — Owner-Operated Auto Repair in Groton, CT</title>
-  <meta name="description" content="Meet Matt Kavgaci — fixing cars since 1996 and running Atlantic Auto Service in Groton, CT since 2002. Honest work, fair pricing, customers known by name.">
+  <meta name="description" content="Matt Kavgaci has repaired vehicles professionally since 1996 and has run Atlantic Auto Service in Groton, CT since 2002. Honest work, fair pricing, customers known by name.">
   <meta name="theme-color" content="#16181a">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- TODO: once the site is live, add a canonical link and og:url with the final address -->
+  <link rel="canonical" href="https://squashnet.github.io/AtlanticAutoService/about.html">
+  <meta property="og:url" content="https://squashnet.github.io/AtlanticAutoService/about.html">
   <meta property="og:site_name" content="Atlantic Auto Service">
   <meta property="og:type" content="website">
   <meta property="og:title" content="About Atlantic Auto Service — Owner-Operated Since 2002">
-  <meta property="og:description" content="Matt Kavgaci has been fixing cars since 1996 and running this Groton shop since 2002. The person who diagnoses your car is the person who repairs it.">
+  <meta property="og:description" content="Matt Kavgaci has repaired vehicles professionally since 1996 and has run this Groton shop since 2002. The person who diagnoses your car is the person who repairs it.">
   <meta property="og:locale" content="en_US">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +41,7 @@
   --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
 
   --container: 1120px;
-  --radius: 6px;
+  --radius: 10px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -263,15 +264,15 @@ address { font-style: normal; }
 .seal-roundtext {
   fill: var(--paper);
   font-family: var(--font-display);
-  font-weight: 700; font-size: 15.5px;
-  letter-spacing: 0.3em;
+  font-weight: 700; font-size: 14.5px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .seal-star { fill: var(--red-bright); }
 .seal-est {
   fill: var(--paper); fill-opacity: 0.85;
   font-family: var(--font-body); font-weight: 700;
-  font-size: 12.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
 }
 .seal-year {
   fill: var(--red-bright);
@@ -661,6 +662,65 @@ section[id] { scroll-margin-top: 90px; }
 .faq-body p:last-child { margin-bottom: 0; }
 .faq-body strong { color: var(--paper); }
 
+/* ---------- Hero trust line ---------- */
+.hero-trust {
+  display: flex; align-items: center; gap: 0.55rem;
+  margin-top: 1.4rem;
+  color: var(--muted); font-weight: 600; font-size: 1rem;
+}
+.hero-trust .star { color: var(--red-bright); font-size: 1.2rem; line-height: 1; }
+.hero-trust strong { color: var(--paper); }
+
+/* ---------- Featured quote ---------- */
+.quote--featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(216, 64, 31, 0.10), rgba(216, 64, 31, 0) 55%), var(--panel);
+}
+.quote--featured p { font-size: 1.22rem; max-width: 72ch; }
+
+/* ---------- Mobile call bar ---------- */
+.mobile-call-bar { display: none; }
+@media (max-width: 719.98px) {
+  body { padding-bottom: 88px; }
+  .mobile-call-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    padding: 0.65rem 0.9rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: rgba(16, 18, 20, 0.97);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+  }
+  .mobile-call-bar .btn { padding: 0.85rem 0.5rem; font-size: 1rem; }
+}
+
+/* ---------- CARFAX verified note ---------- */
+.verified-note {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.4rem;
+  background: var(--panel);
+  border: 1px solid var(--line); border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  color: var(--muted); max-width: 76ch;
+}
+.verified-note strong { color: var(--paper); }
+
+/* ---------- Review platform links ---------- */
+.review-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 2.25rem; }
+.review-links-label {
+  font-family: var(--font-display); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.95rem; color: var(--muted); margin: 0 0.4rem 0 0;
+}
+.review-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.05rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  color: var(--paper); text-decoration: none;
+  font-weight: 600; font-size: 0.95rem;
+}
+.review-chip:hover { border-color: var(--red); color: var(--paper); }
+.review-chip .score { color: var(--red-bright); font-weight: 700; }
+
 /* ---------- Motion & print sanity ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -678,14 +738,15 @@ section[id] { scroll-margin-top: 90px; }
 
   </style>
 
-  <!-- Local business schema. NOTE: geo coordinates are approximate — for best local SEO,
-       right-click the shop's pin in Google Maps, copy the exact lat/long, and paste it below. -->
+  <!-- Local business schema. Coordinates come from the shop's Openbay listing —
+       spot-check against the Google Maps pin if the marker ever moves. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Atlantic Auto Service",
-    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/4,000-mile warranty.",
+    "url": "https://squashnet.github.io/AtlanticAutoService/",
+    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/12,000-mile warranty.",
     "telephone": "+1-860-449-9514",
     "address": {
       "@type": "PostalAddress",
@@ -695,7 +756,7 @@ section[id] { scroll-margin-top: 90px; }
       "postalCode": "06340",
       "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 41.3395, "longitude": -72.0210 },
+    "geo": { "@type": "GeoCoordinates", "latitude": 41.347264, "longitude": -72.021835 },
     "hasMap": "https://www.google.com/maps/search/?api=1&query=182+Fort+Hill+Rd%2C+Groton%2C+CT+06340",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" }
@@ -723,8 +784,7 @@ section[id] { scroll-margin-top: 90px; }
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Atlantic Auto Service — home">
         <svg class="brand-mark" width="34" height="34" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <polygon points="32,6 54,19 54,45 32,58 10,45 10,19" fill="#d8401f"/>
-          <circle cx="32" cy="32" r="10" fill="#16181a"/>
+          <path fill="#d8401f" fill-rule="evenodd" d="M27.28,11.54 L27.96,3.28 A29.0,29.0 0 0 1 36.04,3.28 L36.72,11.54 A21.0,21.0 0 0 1 43.13,14.19 L49.45,8.84 A29.0,29.0 0 0 1 55.16,14.55 L49.81,20.87 A21.0,21.0 0 0 1 52.46,27.28 L60.72,27.96 A29.0,29.0 0 0 1 60.72,36.04 L52.46,36.72 A21.0,21.0 0 0 1 49.81,43.13 L55.16,49.45 A29.0,29.0 0 0 1 49.45,55.16 L43.13,49.81 A21.0,21.0 0 0 1 36.72,52.46 L36.04,60.72 A29.0,29.0 0 0 1 27.96,60.72 L27.28,52.46 A21.0,21.0 0 0 1 20.87,49.81 L14.55,55.16 A29.0,29.0 0 0 1 8.84,49.45 L14.19,43.13 A21.0,21.0 0 0 1 11.54,36.72 L3.28,36.04 A29.0,29.0 0 0 1 3.28,27.96 L11.54,27.28 A21.0,21.0 0 0 1 14.19,20.87 L8.84,14.55 A29.0,29.0 0 0 1 14.55,8.84 L20.87,14.19 A21.0,21.0 0 0 1 27.28,11.54 Z M32.0,20.5 L41.96,26.25 L41.96,37.75 L32.0,43.5 L22.04,37.75 L22.04,26.25 Z"/>
         </svg>
         <span class="brand-text">
           <span class="brand-name">Atlantic</span>
@@ -762,8 +822,8 @@ section[id] { scroll-margin-top: 90px; }
 
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">About the Shop</p>
-        <h1>The Guy Under the Hood</h1>
+        <p class="eyebrow">Who We Are</p>
+        <h1>About Atlantic Auto Service</h1>
         <p class="lede">Atlantic Auto Service has had the same owner, the same standards, and the same phone number since 2002.</p>
       </div>
     </section>
@@ -772,13 +832,13 @@ section[id] { scroll-margin-top: 90px; }
       <div class="container about-grid">
 
         <div class="story">
-          <p>Matt Kavgaci was the kid who took things apart to see how they worked — and engines were the things most worth taking apart. By the time most people his age were learning to drive, he was learning what made driving possible.</p>
+          <p>Matt Kavgaci has been repairing vehicles professionally since 1996 — more than 25 years of hands-on diagnostic and mechanical work across domestic, European, and Asian makes.</p>
 
-          <p>He started fixing cars for a living in 1996. Six years in other people's garages taught him the trade — and taught him exactly how he'd run a shop differently. In 2002, he opened Atlantic Auto Service on Fort Hill Road in Groton.</p>
+          <p>After six years sharpening his trade in other shops, he opened Atlantic Auto Service on Fort Hill Road in 2002 — a shop built to a straightforward standard: diagnose accurately, explain clearly, and price fairly.</p>
 
           <p>More than two decades later, not much has changed, and that's on purpose. Matt is still the one who diagnoses your vehicle and still the one under the hood. There's no service writer between you and the person doing the work, and no commission structure pushing repairs you don't need. When the shop calls with a quote, you're hearing from the person who actually looked at your car.</p>
 
-          <p>He doesn't run the place alone. Mark Addam, Matt's partner at the shop, works alongside him — and between the two of them, the phones get answered, the cars get fixed, and the shop runs the way a small shop should: personally.</p>
+          <p>He doesn't run the place alone. Mark Addam, Matt's partner at the shop, works alongside him — and together they hold every job to the same standard: done right, explained clearly, and backed by the shop's warranty.</p>
 
           <p class="kicker">A shop where they know your name</p>
 
@@ -823,11 +883,11 @@ section[id] { scroll-margin-top: 90px; }
           </div>
 
           <div class="about-card">
-            <h2>The Short Version</h2>
+            <h2>At a Glance</h2>
             <ol class="timeline" role="list">
               <li>
                 <span class="year">1996</span>
-                <p>Matt starts fixing cars professionally.</p>
+                <p>Matt begins his professional repair career.</p>
               </li>
               <li>
                 <span class="year">2002</span>
@@ -842,7 +902,7 @@ section[id] { scroll-margin-top: 90px; }
 
           <div class="about-card">
             <h2>What Every Job Gets</h2>
-            <p>A <strong>free quote</strong> before any work starts. <strong>OEM parts</strong>, never cheap substitutes. Your <strong>old parts kept</strong> at the shop for you to see. A <strong>1-year / 4,000-mile warranty</strong> on parts and labor. And a straight answer, every time.</p>
+            <p>A <strong>free quote</strong> before any work starts. <strong>OEM parts</strong>, never cheap substitutes. Your <strong>old parts kept</strong> at the shop for you to see. A <strong>1-year / 12,000-mile warranty</strong> on parts and labor. And a straight answer, every time.</p>
           </div>
         </div>
 
@@ -851,7 +911,7 @@ section[id] { scroll-margin-top: 90px; }
 
     <section class="cta-band" aria-labelledby="cta-heading">
       <div class="container">
-        <h2 id="cta-heading">Come see how a shop should run.</h2>
+        <h2 id="cta-heading">Ready for a shop you can trust?</h2>
         <p>Walk in Monday through Friday, 8 to 5 — no appointment needed. Serving Groton, New London, Mystic, Waterford, Stonington, Ledyard, and all of southeastern Connecticut.</p>
         <div class="btn-row">
           <a class="btn btn-dark btn-lg" href="tel:+18604499514">Call (860) 449-9514</a>
@@ -891,9 +951,9 @@ section[id] { scroll-margin-top: 90px; }
       <div class="footer-col">
         <p class="footer-h">Find Us Online</p>
         <ul>
-          <!-- TODO: replace # with your real profile links -->
-          <li><a href="#" rel="noopener">Google Business Profile</a></li>
-          <li><a href="#" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/people/Atlantic-Auto-Service-LLC/100064060028101/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.yelp.com/biz/atlantic-auto-service-groton" target="_blank" rel="noopener">Yelp</a></li>
+          <li><a href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">CARFAX Reviews</a></li>
         </ul>
       </div>
     </div>
@@ -911,6 +971,14 @@ section[id] { scroll-margin-top: 90px; }
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-call-bar">
+    <a class="btn btn-primary" href="tel:+18604499514">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+    <a class="btn btn-ghost" href="contact.html#quote">Free Quote</a>
+  </div>
 
   <script>
 /* Atlantic Auto Service — main.js

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://squashnet.github.io/AtlanticAutoService/sitemap.xml

@@ -8,11 +8,12 @@
   <meta name="theme-color" content="#16181a">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- TODO: once the site is live, add a canonical link and og:url with the final address -->
+  <link rel="canonical" href="https://squashnet.github.io/AtlanticAutoService/services.html">
+  <meta property="og:url" content="https://squashnet.github.io/AtlanticAutoService/services.html">
   <meta property="og:site_name" content="Atlantic Auto Service">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Auto Repair Services in Groton, CT — Atlantic Auto Service">
-  <meta property="og:description" content="Brakes, engine, suspension, A/C, electrical, exhaust, tires, and more. Free quotes, OEM parts, 1-year/4,000-mile warranty.">
+  <meta property="og:description" content="Brakes, engine, suspension, A/C, electrical, exhaust, tires, and more. Free quotes, OEM parts, 1-year/12,000-mile warranty.">
   <meta property="og:locale" content="en_US">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +41,7 @@
   --font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
 
   --container: 1120px;
-  --radius: 6px;
+  --radius: 10px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -263,15 +264,15 @@ address { font-style: normal; }
 .seal-roundtext {
   fill: var(--paper);
   font-family: var(--font-display);
-  font-weight: 700; font-size: 15.5px;
-  letter-spacing: 0.3em;
+  font-weight: 700; font-size: 14.5px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .seal-star { fill: var(--red-bright); }
 .seal-est {
   fill: var(--paper); fill-opacity: 0.85;
   font-family: var(--font-body); font-weight: 700;
-  font-size: 12.5px; letter-spacing: 0.42em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
 }
 .seal-year {
   fill: var(--red-bright);
@@ -661,6 +662,65 @@ section[id] { scroll-margin-top: 90px; }
 .faq-body p:last-child { margin-bottom: 0; }
 .faq-body strong { color: var(--paper); }
 
+/* ---------- Hero trust line ---------- */
+.hero-trust {
+  display: flex; align-items: center; gap: 0.55rem;
+  margin-top: 1.4rem;
+  color: var(--muted); font-weight: 600; font-size: 1rem;
+}
+.hero-trust .star { color: var(--red-bright); font-size: 1.2rem; line-height: 1; }
+.hero-trust strong { color: var(--paper); }
+
+/* ---------- Featured quote ---------- */
+.quote--featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(216, 64, 31, 0.10), rgba(216, 64, 31, 0) 55%), var(--panel);
+}
+.quote--featured p { font-size: 1.22rem; max-width: 72ch; }
+
+/* ---------- Mobile call bar ---------- */
+.mobile-call-bar { display: none; }
+@media (max-width: 719.98px) {
+  body { padding-bottom: 88px; }
+  .mobile-call-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+    padding: 0.65rem 0.9rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: rgba(16, 18, 20, 0.97);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+  }
+  .mobile-call-bar .btn { padding: 0.85rem 0.5rem; font-size: 1rem; }
+}
+
+/* ---------- CARFAX verified note ---------- */
+.verified-note {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.4rem;
+  background: var(--panel);
+  border: 1px solid var(--line); border-left: 4px solid var(--red);
+  border-radius: var(--radius);
+  color: var(--muted); max-width: 76ch;
+}
+.verified-note strong { color: var(--paper); }
+
+/* ---------- Review platform links ---------- */
+.review-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 2.25rem; }
+.review-links-label {
+  font-family: var(--font-display); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.95rem; color: var(--muted); margin: 0 0.4rem 0 0;
+}
+.review-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.05rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  color: var(--paper); text-decoration: none;
+  font-weight: 600; font-size: 0.95rem;
+}
+.review-chip:hover { border-color: var(--red); color: var(--paper); }
+.review-chip .score { color: var(--red-bright); font-weight: 700; }
+
 /* ---------- Motion & print sanity ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -678,14 +738,15 @@ section[id] { scroll-margin-top: 90px; }
 
   </style>
 
-  <!-- Local business schema. NOTE: geo coordinates are approximate — for best local SEO,
-       right-click the shop's pin in Google Maps, copy the exact lat/long, and paste it below. -->
+  <!-- Local business schema. Coordinates come from the shop's Openbay listing —
+       spot-check against the Google Maps pin if the marker ever moves. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Atlantic Auto Service",
-    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/4,000-mile warranty.",
+    "url": "https://squashnet.github.io/AtlanticAutoService/",
+    "description": "Independent, owner-operated auto repair shop in Groton, CT. Servicing domestic, European, and Asian vehicles since 2002. Free quotes, OEM parts, 1-year/12,000-mile warranty.",
     "telephone": "+1-860-449-9514",
     "address": {
       "@type": "PostalAddress",
@@ -695,7 +756,7 @@ section[id] { scroll-margin-top: 90px; }
       "postalCode": "06340",
       "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 41.3395, "longitude": -72.0210 },
+    "geo": { "@type": "GeoCoordinates", "latitude": 41.347264, "longitude": -72.021835 },
     "hasMap": "https://www.google.com/maps/search/?api=1&query=182+Fort+Hill+Rd%2C+Groton%2C+CT+06340",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" }
@@ -723,8 +784,7 @@ section[id] { scroll-margin-top: 90px; }
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Atlantic Auto Service — home">
         <svg class="brand-mark" width="34" height="34" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <polygon points="32,6 54,19 54,45 32,58 10,45 10,19" fill="#d8401f"/>
-          <circle cx="32" cy="32" r="10" fill="#16181a"/>
+          <path fill="#d8401f" fill-rule="evenodd" d="M27.28,11.54 L27.96,3.28 A29.0,29.0 0 0 1 36.04,3.28 L36.72,11.54 A21.0,21.0 0 0 1 43.13,14.19 L49.45,8.84 A29.0,29.0 0 0 1 55.16,14.55 L49.81,20.87 A21.0,21.0 0 0 1 52.46,27.28 L60.72,27.96 A29.0,29.0 0 0 1 60.72,36.04 L52.46,36.72 A21.0,21.0 0 0 1 49.81,43.13 L55.16,49.45 A29.0,29.0 0 0 1 49.45,55.16 L43.13,49.81 A21.0,21.0 0 0 1 36.72,52.46 L36.04,60.72 A29.0,29.0 0 0 1 27.96,60.72 L27.28,52.46 A21.0,21.0 0 0 1 20.87,49.81 L14.55,55.16 A29.0,29.0 0 0 1 8.84,49.45 L14.19,43.13 A21.0,21.0 0 0 1 11.54,36.72 L3.28,36.04 A29.0,29.0 0 0 1 3.28,27.96 L11.54,27.28 A21.0,21.0 0 0 1 14.19,20.87 L8.84,14.55 A29.0,29.0 0 0 1 14.55,8.84 L20.87,14.19 A21.0,21.0 0 0 1 27.28,11.54 Z M32.0,20.5 L41.96,26.25 L41.96,37.75 L32.0,43.5 L22.04,37.75 L22.04,26.25 Z"/>
         </svg>
         <span class="brand-text">
           <span class="brand-name">Atlantic</span>
@@ -764,7 +824,7 @@ section[id] { scroll-margin-top: 90px; }
       <div class="container">
         <p class="eyebrow">Services</p>
         <h1>What We Fix</h1>
-        <p class="lede">Domestic, European, and Asian — cars, trucks, and SUVs. Every job starts with a free quote and ends with a 1-year / 4,000-mile warranty on parts and labor.</p>
+        <p class="lede">Domestic, European, and Asian — cars, trucks, and SUVs. Every job starts with a free quote and ends with a 1-year / 12,000-mile warranty on parts and labor.</p>
 
         <nav class="svc-jump" aria-label="Jump to a service category">
           <a href="#maintenance">Routine Maintenance</a>
@@ -787,7 +847,7 @@ section[id] { scroll-margin-top: 90px; }
           <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           <h2 id="maintenance-h">Routine Maintenance</h2>
         </div>
-        <p>The upkeep that keeps you out of the repair bay. Regular maintenance done on schedule costs a lot less than the breakdown it prevents.</p>
+        <p>Routine upkeep, done on schedule, costs far less than the breakdown it prevents.</p>
         <ul class="svc-list">
           <li>Oil changes</li>
           <li>Tune-ups</li>
@@ -802,10 +862,10 @@ section[id] { scroll-margin-top: 90px; }
 
       <section class="svc-cat" id="engine" aria-labelledby="engine-h">
         <div class="svc-cat-head">
-          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="9" width="12" height="9" rx="1.5"/><path d="M9 9V6h6"/><path d="M17 13h4v4"/><path d="M5 13H2"/><path d="M8 18v2m8-2v2"/></svg>
+          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="9" width="13" height="8" rx="1.5"/><path d="M8 9V6"/><path d="M6 6h7"/><path d="M17 11h3.5v4H17"/><path d="M7 17v2.5"/><path d="M14 17v2.5"/><circle cx="10.5" cy="13" r="1.7"/></svg>
           <h2 id="engine-h">Engine &amp; Drivetrain</h2>
         </div>
-        <p>From a check-engine light to a full rebuild. We diagnose first, explain what we found, and quote you before touching anything.</p>
+        <p>From a check-engine light to a full rebuild — we diagnose first, explain what we found, and quote the job before any work begins.</p>
         <ul class="svc-list">
           <li>Engine repair &amp; rebuilds</li>
           <li>Diagnostics &amp; check engine light</li>
@@ -819,7 +879,7 @@ section[id] { scroll-margin-top: 90px; }
 
       <section class="svc-cat" id="brakes" aria-labelledby="brakes-h">
         <div class="svc-cat-head">
-          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="6.6" r="0.9" fill="currentColor" stroke="none"/><circle cx="17.4" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="17.4" r="0.9" fill="currentColor" stroke="none"/><circle cx="6.6" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg>
+          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="7"/><circle cx="12" cy="13" r="2.4"/><circle cx="12" cy="8.9" r="0.85" fill="currentColor" stroke="none"/><circle cx="16.1" cy="13" r="0.85" fill="currentColor" stroke="none"/><circle cx="12" cy="17.1" r="0.85" fill="currentColor" stroke="none"/><circle cx="7.9" cy="13" r="0.85" fill="currentColor" stroke="none"/><path d="M15.28 3.98A9.6 9.6 0 0 1 21.13 10.03"/></svg>
           <h2 id="brakes-h">Brakes</h2>
         </div>
         <p>If they squeal, grind, pulse, or feel soft, don't put it off. We'll tell you what actually needs replacing — and what doesn't.</p>
@@ -849,7 +909,7 @@ section[id] { scroll-margin-top: 90px; }
 
       <section class="svc-cat" id="hvac" aria-labelledby="hvac-h">
         <div class="svc-cat-head">
-          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v20"/><path d="M3.3 7 20.7 17"/><path d="M20.7 7 3.3 17"/><path d="m9 4.5 3 2 3-2"/><path d="m9 19.5 3-2 3 2"/></svg>
+          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v18"/><path d="M4.2 7.5 19.8 16.5"/><path d="M19.8 7.5 4.2 16.5"/><path d="m8.5 5.7 3.5-2.5 3.5 2.5"/><path d="m8.5 18.3 3.5 2.5 3.5-2.5"/></svg>
           <h2 id="hvac-h">Heating &amp; Cooling</h2>
         </div>
         <p>Cold air in July, heat in January, and an engine that holds its temperature in between.</p>
@@ -879,7 +939,7 @@ section[id] { scroll-margin-top: 90px; }
 
       <section class="svc-cat" id="exhaust" aria-labelledby="exhaust-h">
         <div class="svc-cat-head">
-          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="9" width="10" height="6" rx="3"/><path d="M2 12h4"/><path d="M16 12h4"/><path d="M20 10.5v3"/></svg>
+          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4.5" y="9.5" width="11" height="5.5" rx="2.75"/><path d="M1.5 12.2h3"/><path d="M15.5 12.2h3.2"/><path d="m18.7 12.2 2.6-1.5"/><circle cx="21.1" cy="8.8" r="0.7" fill="currentColor" stroke="none"/><circle cx="22.5" cy="7.1" r="0.6" fill="currentColor" stroke="none"/></svg>
           <h2 id="exhaust-h">Exhaust</h2>
         </div>
         <p>A rattling heat shield, a rusted-out section, a failing converter — loud problems with straightforward fixes.</p>
@@ -892,10 +952,10 @@ section[id] { scroll-margin-top: 90px; }
 
       <section class="svc-cat" id="tires" aria-labelledby="tires-h">
         <div class="svc-cat-head">
-          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="3" x2="12" y2="5.6"/><line x1="12" y1="3" x2="12" y2="5.6" transform="rotate(60 12 12)"/><line x1="12" y1="3" x2="12" y2="5.6" transform="rotate(120 12 12)"/><line x1="12" y1="3" x2="12" y2="5.6" transform="rotate(180 12 12)"/><line x1="12" y1="3" x2="12" y2="5.6" transform="rotate(240 12 12)"/><line x1="12" y1="3" x2="12" y2="5.6" transform="rotate(300 12 12)"/></svg>
+          <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.8"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(22.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(67.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(112.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(157.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(202.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(247.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(292.5 12 12)"/><line x1="12" y1="3.2" x2="12" y2="5.2" transform="rotate(337.5 12 12)"/></svg>
           <h2 id="tires-h">Tires &amp; Wheels</h2>
         </div>
-        <p>Mounted, balanced, and torqued right — and the TPMS light dealt with, not ignored.</p>
+        <p>Mounted, balanced, and torqued to spec — and the TPMS light diagnosed, not ignored.</p>
         <ul class="svc-list">
           <li>Rotation</li>
           <li>Balancing</li>
@@ -910,7 +970,7 @@ section[id] { scroll-margin-top: 90px; }
           <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
           <h2 id="other-h">Other Work</h2>
         </div>
-        <p>The jobs that don't fit a neat category. If it's mechanical, bring it by.</p>
+        <p>The jobs that don't fit a neat category. If it's mechanical, bring it in.</p>
         <ul class="svc-list">
           <li>Vehicle inspections</li>
           <li>Pre-purchase inspections</li>
@@ -969,9 +1029,9 @@ section[id] { scroll-margin-top: 90px; }
       <div class="footer-col">
         <p class="footer-h">Find Us Online</p>
         <ul>
-          <!-- TODO: replace # with your real profile links -->
-          <li><a href="#" rel="noopener">Google Business Profile</a></li>
-          <li><a href="#" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/people/Atlantic-Auto-Service-LLC/100064060028101/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.yelp.com/biz/atlantic-auto-service-groton" target="_blank" rel="noopener">Yelp</a></li>
+          <li><a href="https://www.carfax.com/Reviews-Atlantic-Auto-Service-Groton-CT_XCIMALVUHG" target="_blank" rel="noopener">CARFAX Reviews</a></li>
         </ul>
       </div>
     </div>
@@ -989,6 +1049,14 @@ section[id] { scroll-margin-top: 90px; }
       </nav>
     </div>
   </footer>
+
+  <div class="mobile-call-bar">
+    <a class="btn btn-primary" href="tel:+18604499514">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Now
+    </a>
+    <a class="btn btn-ghost" href="contact.html#quote">Free Quote</a>
+  </div>
 
   <script>
 /* Atlantic Auto Service — main.js
